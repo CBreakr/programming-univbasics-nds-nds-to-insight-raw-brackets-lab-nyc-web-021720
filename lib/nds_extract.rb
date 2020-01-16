@@ -19,7 +19,7 @@ def totalForDirector(director)
   movies = director[:movies]
   total = 0
   movies.each do |movie|
-    total += movie[worldwide_gross]
+    total += movie[:worldwide_gross]
   end
   return total
 end
