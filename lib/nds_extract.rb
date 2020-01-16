@@ -8,15 +8,20 @@ def directors_totals(nds)
   result = {}
   
   directors.each do |director|
-    result[director[:name]] = countForDirector(director)
+    result[director[:name]] = totalForDirector(director)
   end
 
   return result
 end
 
 #
-def countForDirector(director)
-  
+def totalForDirector(director)
+  movies = director[:movies]
+  total = 0
+  movies.each do |movie|
+    total += movie[worldwide_gross]
+  end
+  return total
 end
 
 pp directors_database
